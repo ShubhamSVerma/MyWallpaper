@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+
+  nav {
+    section.navigation {
+      background: white;
+      width: 100%;
+      height: 60px;
+      display: grid;
+      grid-template-columns: 3% 1fr 1fr 1fr 3%;
+      div.logo {
+        grid-column: 2;
+        font-size: 3rem;
+        font-weight: 700;
+        span {
+          color: #009fdf;
+        }
+      }
+      div.nav {
+        grid-column: 4;
+        justify-self: right;
+        ul {
+          list-style: none;
+          li {
+            display: inline-block;
+            // line-height: 3rem;
+            margin: 1.1rem 8px 0 8px;
+            a {
+              text-decoration: none;
+              color: black;
+              font-size: 1.1rem;
+              transition: all 1s;
+              &::after {
+                content: "";
+                display: block;
+                height: 2px;
+                background: black;
+                width: 0%;
+                transition: all 1s;
+              }
+            }
+            &:hover {
+              a::after {
+                background: #009fdf;
+                width: 100%;
+                transition: all 1s;
+              }
+              a {
+                color: #009fdf;
+                transition: all 1s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.head {
+      background-image: url("KanakiChromeWallpaper.jpg");
+      background-size: cover;
+      margin: 1% 3% 1% 3%;
+      border-radius: 10px;
+      opacity: 0;
+      transition: all 1s;
+      height: 700px;
+      p {
+        position: relative;
+        background: rgba(0, 0, 0, 0.35);
+        line-height: 700px;
+        text-align: center;
+        font-size: 5rem;
+        color: white;
+        // text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+        span {
+          color: white;
+        }
+        span.gallary {
+          color: black;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 55%;
+          left: 22%;
+          display: block;
+          background: white;
+          width: 35%;
+          height: 3px;
+        }
+      }
+      &.active {
+        opacity: 1;
+        transition: all 1s;
+      }
+    }
+    section.cardlist {
+      display: grid;
+      margin-bottom: 15px;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      section.card {
+        justify-self: center;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        position: relative;
+        border-radius: 10px;
+        width: 280px;
+        height: 400px;
+        margin: 10px;
+        transform-origin: 50% 50%;
+        transform-style: preserve-3d;
+        opacity: 0;
+        transition: all 0.5s;
+        div.front {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          backface-visibility: hidden;
+          border: 1px solid black;
+          border-radius: 10px;
+          img {
+            width: 280px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+        div.back {
+          padding: 100px 15px 0 15px;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: rgb(95, 93, 93);
+          backface-visibility: hidden;
+          border: 1px solid black;
+          border-radius: 10px;
+          justify-self: center;
+          font-size: 1.05rem;
+          color: white;
+          transform: rotateY(180deg);
+        }
+        &.active {
+          &:hover {
+            transform: rotateY(180deg);
+            transition: all 0.5s;
+          }
+          opacity: 1;
+          transition: all 1s;
+        }
+      }
+    }
+  }
+
+  hr {
+    color: white;
+    width: 60%;
+    margin: auto;
+  }
+
+  footer {
+    width: 100%;
+    height: 150px;
+    section.creater {
+      position: relative;
+      p {
+        margin: 70px auto;
+        text-align: center;
+        font-size: xx-large;
+        color: white;
+        span {
+          font-size: 50px;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        i.fa-linkedin-square {
+          position: absolute;
+          top: 120%;
+          left: 47%;
+          font-size: xx-large;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        i.fa-github {
+          position: absolute;
+          top: 120%;
+          right: 47%;
+          font-size: xx-large;
+        }
+      }
+    }
+  }
+}

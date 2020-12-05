@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+body nav section.navigation {
+  background: white;
+  width: 100%;
+  height: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3% 1fr 1fr 1fr 3%;
+      grid-template-columns: 3% 1fr 1fr 1fr 3%;
+}
+
+body nav section.navigation div.logo {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+body nav section.navigation div.logo span {
+  color: #009fdf;
+}
+
+body nav section.navigation div.nav {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-column-align: right;
+      justify-self: right;
+}
+
+body nav section.navigation div.nav ul {
+  list-style: none;
+}
+
+body nav section.navigation div.nav ul li {
+  display: inline-block;
+  margin: 1.1rem 8px 0 8px;
+}
+
+body nav section.navigation div.nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+body nav section.navigation div.nav ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: black;
+  width: 0%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+body nav section.navigation div.nav ul li:hover a::after {
+  background: #009fdf;
+  width: 100%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+body nav section.navigation div.nav ul li:hover a {
+  color: #009fdf;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+body main section.head {
+  background-image: url("KanakiChromeWallpaper.jpg");
+  background-size: cover;
+  margin: 1% 3% 1% 3%;
+  border-radius: 10px;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  height: 700px;
+}
+
+body main section.head p {
+  position: relative;
+  background: rgba(0, 0, 0, 0.35);
+  line-height: 700px;
+  text-align: center;
+  font-size: 5rem;
+  color: white;
+}
+
+body main section.head p span {
+  color: white;
+}
+
+body main section.head p span.gallary {
+  color: black;
+}
+
+body main section.head p::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 22%;
+  display: block;
+  background: white;
+  width: 35%;
+  height: 3px;
+}
+
+body main section.head.active {
+  opacity: 1;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+body main section.cardlist {
+  display: -ms-grid;
+  display: grid;
+  margin-bottom: 15px;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+body main section.cardlist section.card {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  position: relative;
+  border-radius: 10px;
+  width: 280px;
+  height: 400px;
+  margin: 10px;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body main section.cardlist section.card div.front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+body main section.cardlist section.card div.front img {
+  width: 280px;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+body main section.cardlist section.card div.back {
+  padding: 100px 15px 0 15px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #5f5d5d;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 1.05rem;
+  color: white;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+body main section.cardlist section.card.active {
+  opacity: 1;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+body main section.cardlist section.card.active:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+body hr {
+  color: white;
+  width: 60%;
+  margin: auto;
+}
+
+body footer {
+  width: 100%;
+  height: 150px;
+}
+
+body footer section.creater {
+  position: relative;
+}
+
+body footer section.creater p {
+  margin: 70px auto;
+  text-align: center;
+  font-size: xx-large;
+  color: white;
+}
+
+body footer section.creater p span {
+  font-size: 50px;
+}
+
+body footer section.creater a {
+  text-decoration: none;
+  color: white;
+}
+
+body footer section.creater a i.fa-linkedin-square {
+  position: absolute;
+  top: 120%;
+  left: 47%;
+  font-size: xx-large;
+}
+
+body footer section.creater a {
+  text-decoration: none;
+  color: white;
+}
+
+body footer section.creater a i.fa-github {
+  position: absolute;
+  top: 120%;
+  right: 47%;
+  font-size: xx-large;
+}
+/*# sourceMappingURL=flip-card.css.map */
